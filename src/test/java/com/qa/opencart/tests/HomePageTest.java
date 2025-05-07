@@ -16,7 +16,7 @@ public class HomePageTest extends BaseTest {
 
 	@BeforeTest
 	public void homePageSetup() {
-		homePage=loginPage.doLogin("POMSeries@gmail.com", "POMSeries");
+		homePage=loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
 	}
 
 	@Test

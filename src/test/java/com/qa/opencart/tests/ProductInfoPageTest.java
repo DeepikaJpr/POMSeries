@@ -16,8 +16,7 @@ public class ProductInfoPageTest extends BaseTest {
 
 	@BeforeClass
 	public void prodctInfoSetup() {
-		homePage = loginPage.doLogin("POMSeries@gmail.com", "POMSeries");
-
+		homePage = loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
 	}
 
 	@DataProvider
