@@ -23,7 +23,7 @@ public class OptionsManager {
 	}
 	
 	
-	public ChromeOptions getChromeOption() {	
+	public ChromeOptions getChromeOptions() {	
 		co = new ChromeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless"))) {
 			log.info("====Running in headless mode====");
@@ -32,10 +32,14 @@ public class OptionsManager {
 		if(Boolean.parseBoolean(prop.getProperty("incognito"))) {
 			log.info("====Running in headless mode====");
 			co.addArguments("--incognito");
-		}return co;
+		}
+		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+			co.setCapability("browserName", "chrome");
+		}
+		return co;
 	}
 	
-	public FirefoxOptions getFireFoxOption() {	
+	public FirefoxOptions getFireFoxOptions() {	
 		fo = new FirefoxOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless"))) {
 			log.info("====Running in headless mode====");
@@ -43,16 +47,20 @@ public class OptionsManager {
 		}
 		if(Boolean.parseBoolean(prop.getProperty("incognito"))) {
 			fo.addArguments("--incognito");
+		}if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+			fo.setCapability("browserName", "firefox");
 		}return fo;
 	}
 	
-	public EdgeOptions getEdgeOption() {	
+	public EdgeOptions getEdgeOptions() {	
 		eo = new EdgeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless"))) {
 			eo.addArguments("--headless");
 		}
 		if(Boolean.parseBoolean(prop.getProperty("incognito"))) {
 			eo.addArguments("--incognito");
+		}if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+			eo.setCapability("browserName", "edge");
 		} return eo;
 	}
 	
