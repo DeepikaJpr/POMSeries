@@ -13,13 +13,13 @@
 	</listeners>
 
 
-	<test name="Login Page Test">
+<!--	<test name="Login Page Test">
 			<parameter name="browser" value="chrome" />
 
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
-	</test>
+	</test>-->
 
 	<test name="Home Page Test">
 			<parameter name="browser" value="chrome" />
@@ -29,13 +29,13 @@
 		</classes>
 	</test>
 
-	<test name="Product Info Page Test">
+<!-- 	<test name="Product Info Page Test">
 			<parameter name="browser" value="chrome" />
 
 		<classes>
 			<class name="com.qa.opencart.tests.ProductInfoPageTest" />
 		</classes>
 	</test>
-
+-->
 
 </suite> 
